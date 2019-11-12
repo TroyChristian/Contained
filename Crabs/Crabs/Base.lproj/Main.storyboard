@@ -10,7 +10,7 @@
         <!--Play-->
         <scene sceneID="PB8-3e-Hxf">
             <objects>
-                <viewController title="Play" id="pqf-9h-VRO" sceneMemberID="viewController">
+                <viewController title="Play" id="pqf-9h-VRO" customClass="GameViewController" customModule="Crabs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q2d-aN-AY6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
         <!--Settings-->
         <scene sceneID="PI8-gN-LK9">
             <objects>
-                <viewController title="Settings" id="K7Y-z2-cpd" sceneMemberID="viewController">
+                <viewController title="Settings" id="K7Y-z2-cpd" customClass="SettingsViewController" customModule="Crabs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7yE-Rj-vsc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
