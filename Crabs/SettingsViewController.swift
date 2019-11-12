@@ -16,12 +16,21 @@ class SettingsViewController: UIViewController {
         if sender.isSelected{
             Settings.shared.shouldRoll = true
         }
+        
+        if !sender.isSelected{
+            Settings.shared.shouldRoll  = false
+        }
     }
     @IBAction func toggleZoom(_ sender: UISwitch) {
         sender.isSelected = !sender.isSelected
         
         if sender.isSelected {
             Settings.shared.shouldZoom = true 
+        }
+        
+        if !sender.isSelected {
+            Settings.shared.shouldZoom = false
+            
         }
     }
     
