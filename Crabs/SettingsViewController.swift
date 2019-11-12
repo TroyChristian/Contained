@@ -9,7 +9,22 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+    @IBAction func toggleRoll(_ sender: UISwitch) {
+        sender.isSelected = !sender.isSelected
+        
+        if sender.isSelected{
+            Settings.shared.shouldRoll = true
+        }
+    }
+    @IBAction func toggleZoom(_ sender: UISwitch) {
+        sender.isSelected = !sender.isSelected
+        
+        if sender.isSelected {
+            Settings.shared.shouldZoom = true 
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

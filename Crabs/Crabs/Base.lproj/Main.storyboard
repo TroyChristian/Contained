@@ -14,10 +14,24 @@
                     <view key="view" contentMode="scaleToFill" id="q2d-aN-AY6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ak2-hu-tsC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </skView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wYO-Cb-tev" firstAttribute="bottom" secondItem="ak2-hu-tsC" secondAttribute="bottom" id="KEw-iq-hK9"/>
+                            <constraint firstItem="wYO-Cb-tev" firstAttribute="trailing" secondItem="ak2-hu-tsC" secondAttribute="trailing" id="bzs-ia-RPQ"/>
+                            <constraint firstItem="ak2-hu-tsC" firstAttribute="top" secondItem="wYO-Cb-tev" secondAttribute="top" id="hD3-HH-LcA"/>
+                            <constraint firstItem="ak2-hu-tsC" firstAttribute="leading" secondItem="wYO-Cb-tev" secondAttribute="leading" id="n8n-gK-3fc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wYO-Cb-tev"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Play" image="game_controller" id="9Ga-h1-9XK"/>
+                    <connections>
+                        <outlet property="skview" destination="ak2-hu-tsC" id="IPe-QP-azl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gC6-QJ-N7G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -40,7 +54,54 @@
                     <view key="view" contentMode="scaleToFill" id="7yE-Rj-vsc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vZ9-Ct-KAM">
+                                <rect key="frame" x="156" y="413" width="102" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OuF-vj-Z9k">
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMw-Mg-nM2">
+                                                <rect key="frame" x="0.0" y="0.0" width="28" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ica-VH-ONt">
+                                                <rect key="frame" x="36" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="toggleRoll:" destination="K7Y-z2-cpd" eventType="valueChanged" id="XfS-np-sbi"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QkC-4d-Cao">
+                                        <rect key="frame" x="0.0" y="39" width="101.5" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zoom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrz-Qy-Iw1">
+                                                <rect key="frame" x="0.0" y="0.0" width="44.5" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XJh-P4-sck">
+                                                <rect key="frame" x="52.5" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="toggleZoom:" destination="K7Y-z2-cpd" eventType="valueChanged" id="GqZ-fs-D1p"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vZ9-Ct-KAM" firstAttribute="top" secondItem="1hP-lr-lpE" secondAttribute="top" constant="369" id="TFO-3a-5fo"/>
+                            <constraint firstItem="1hP-lr-lpE" firstAttribute="trailing" secondItem="vZ9-Ct-KAM" secondAttribute="trailing" constant="156" id="ZSd-8d-37m"/>
+                            <constraint firstItem="vZ9-Ct-KAM" firstAttribute="centerX" secondItem="7yE-Rj-vsc" secondAttribute="centerX" id="avN-Q3-6DA"/>
+                            <constraint firstItem="vZ9-Ct-KAM" firstAttribute="centerY" secondItem="7yE-Rj-vsc" secondAttribute="centerY" id="sG6-fp-TPt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1hP-lr-lpE"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="0lW-hq-Nnz"/>
