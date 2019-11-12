@@ -14,7 +14,27 @@
                     <view key="view" contentMode="scaleToFill" id="fHi-rh-6sl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crabs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLf-1U-6iJ">
+                                <rect key="frame" x="140.5" y="419" width="133" height="58"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lets Play!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsm-Za-VMM">
+                                <rect key="frame" x="170" y="555" width="74" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hsm-Za-VMM" firstAttribute="top" secondItem="YLf-1U-6iJ" secondAttribute="bottom" constant="78" id="1Q3-qO-X5x"/>
+                            <constraint firstItem="hsm-Za-VMM" firstAttribute="centerX" secondItem="fHi-rh-6sl" secondAttribute="centerX" id="LAv-35-sNx"/>
+                            <constraint firstItem="YLf-1U-6iJ" firstAttribute="centerY" secondItem="fHi-rh-6sl" secondAttribute="centerY" id="l6w-qp-5vq"/>
+                            <constraint firstItem="YLf-1U-6iJ" firstAttribute="centerX" secondItem="fHi-rh-6sl" secondAttribute="centerX" id="oYU-SY-OdA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VKG-gR-HY0"/>
                     </view>
                     <navigationItem key="navigationItem" id="Eaz-7B-FGG">
@@ -36,7 +56,28 @@
                     <view key="view" contentMode="scaleToFill" id="wNk-jf-gd9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVz-Fi-ktG">
+                                <rect key="frame" x="201" y="395" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGI-2q-B2n">
+                                <rect key="frame" x="142" y="419.5" width="130" height="57.5"/>
+                                <string key="text">Tap to move 
+the crab</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hGI-2q-B2n" firstAttribute="centerY" secondItem="wNk-jf-gd9" secondAttribute="centerY" id="Khf-By-EdL"/>
+                            <constraint firstItem="hGI-2q-B2n" firstAttribute="centerX" secondItem="wNk-jf-gd9" secondAttribute="centerX" id="qwN-LT-a63"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9oR-KD-nCq"/>
                     </view>
                     <toolbarItems>
@@ -56,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="1638" y="42"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="trB-Eh-f9n">
             <objects>
-                <viewController id="JaQ-Pa-47F" sceneMemberID="viewController">
+                <viewController id="JaQ-Pa-47F" customClass="InfoViewController" customModule="Crabs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hsa-Ie-QVi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,11 +111,16 @@
                         <barButtonItem title="Item" id="FGa-kz-R3O"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="lFV-I1-1Li">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="WAh-bn-Hwd"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="WAh-bn-Hwd">
+                            <connections>
+                                <action selector="done:" destination="v4Q-Hv-eRE" id="hxB-g4-Lvv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ZV-OU-PvQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="v4Q-Hv-eRE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2290" y="42"/>
         </scene>
